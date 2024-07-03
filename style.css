@@ -34,5 +34,45 @@ body{
 .task{
   display: flex;
   justify-content: space-between;
-  padding: 1em;
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+  position: relative;
+}
+.task-content {
+  font-weight: 900;
+  display: flex;
+  align-items: center; 
+  width: 100%;
+  padding: 2.5em 1em; 
+}
+.task-done{
+  text-decoration:line-through;
+  width: 100%;
+  background-color: lightgray;
+  transition: 0.5s;
+}
+
+.button-Container{
+  display: flex;
+  gap: 10px;
+  padding: 2em;
+}
+
+.button-style {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.button-style:hover {
+  background-color: #0056b3;
 }
