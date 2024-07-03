@@ -17,8 +17,22 @@ let addButton = document.getElementById("add-button");
 let taskList = []
 addButton.addEventListener("click", addTask);
 
-
+function validateTaskInput(taskInputValue) {
+  if (taskInputValue.trim().length === 0) { 
+    alert("할 일을 입력 해주세요");
+    return false;
+  } else if (taskInputValue.trim().length > 50) { 
+    alert("할 일이 너무 깁니다. 짧게 입력해주세요.");
+    return false;
+  }
+  return true;
+}
 function addTask() {
+  
+  if (!validateTaskInput(taskInput.value)) {
+    return;
+  }
+
   let task = {
     id: randomID(),
     taskContent: taskInput.value,
@@ -76,12 +90,13 @@ function randomID() {
   return '_' + Math.random().toString(36).substring(2, 9);
 }
 
-function deleteTask(id){
-  for(let i=0;i<taskList.length;i++){
-    if(taskList[i].id==id){
-      taskList.splice(i,1);
+function deleteTask(id) {
+  for (let i = 0; i < taskList.length; i++) {
+    if (taskList[i].id == id) {
+      taskList.splice(i, 1);
       break;
     }
   }
   render();
 }
+
