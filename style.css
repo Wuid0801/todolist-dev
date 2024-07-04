@@ -1,63 +1,59 @@
-body{
+body {
   margin: 0;
   background-image: url("sky-7232494_640.webp");
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
+
+
 }
-.container{
+.container {
   background-color: aliceblue;
-  min-height: 100vh;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
-.task-area{
-  border:1px solid lightgray;
-}
-.task-tabs{
-  display: flex;
-  border-bottom:1px solid lightgray;
-  position: relative;
-}
-.task-tabs div{
+.task-tabs div {
+  cursor: pointer;
   padding: 1em;
 }
-
-#under-line{
+.task-tabs div.active {
+  font-weight: bold;
+  color: red;
+}
+#under-line {
   height: 4px;
   background-color: black;
   position: absolute;
   width: 60px;
   left: 0px;
-  top: 52px;
+  bottom: -4px;
   padding: 0px;
+  transition: left 0.3s, width 0.3s;
 }
-
-.task{
+.task {
   display: flex;
   justify-content: space-between;
   width: 100%;
   border-bottom: 1px solid lightgray;
   position: relative;
+  padding: 1em 0;
 }
 .task-content {
   font-weight: 900;
   display: flex;
-  align-items: center; 
+  align-items: center;
   width: 100%;
-  padding: 2.5em 1em; 
+  padding: 0 1em;
 }
-.task-done{
-  text-decoration:line-through;
+.task-done {
+  text-decoration: line-through;
   width: 100%;
   background-color: lightgray;
   transition: 0.5s;
 }
-
-.button-Container{
+.button-Container {
   display: flex;
   gap: 10px;
-  padding: 2em;
+  padding: 0 1em;
 }
-
 .button-style {
   background-color: #007bff;
   border: none;
@@ -72,7 +68,6 @@ body{
   transition: background-color 0.3s ease;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }
-
 .button-style:hover {
   background-color: #0056b3;
 }
